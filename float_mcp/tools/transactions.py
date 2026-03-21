@@ -124,3 +124,43 @@ async def filter_transactions_by_amount(
     all_transactions = await _fetch_transactions(limit=1000)
     filtered = [t for t in all_transactions if min_amount <= t["amount"] <= max_amount]
     return {"transactions": filtered}
+
+
+async def update_transaction(transaction_id: str, data: dict) -> dict:
+    """
+    Update a single card transaction.
+
+    Args:
+        transaction_id: Transaction ID
+        data: Fields to update
+
+    Returns:
+        {"transaction": {...}} or {"error": "..."}
+    """
+    resp = await float_client.patch(f"/card-transactions/{transaction_id}", data=data)
+
+    if "error" in resp:
+        return resp
+
+    return {"transaction": _normalize_transaction(resp)}
+
+
+async def update_transactions(updates: list) -> dict:
+    """
+    Update multiple card transactions in bulk.
+
+    Args:
+        updates: List of update objects with "id" and other fields to update
+
+    Returns:
+        {"transactions": [...]} or {"error": "..."}
+    """
+    resp = await float_client.patch("/card-transactions", data=updates)
+
+    if "error" in resp:
+        return resp
+
+    items = resp.get("items", resp) if isinstance(resp.get("items"), list) else [resp]
+    transactions = [_normalize_transaction(t) for t in items if "id" in t]
+
+    return {"transactions": transactions}

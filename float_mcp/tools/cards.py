@@ -32,6 +32,24 @@ async def get_cards() -> dict:
     return {"cards": cards}
 
 
+async def get_card_by_id(card_id: str) -> dict:
+    """
+    Retrieve a single card by ID.
+
+    Args:
+        card_id: Card ID
+
+    Returns:
+        {"card": {...}} or {"error": "..."}
+    """
+    resp = await float_client.get(f"/cards/{card_id}")
+
+    if "error" in resp:
+        return resp
+
+    return {"card": _normalize_card(resp)}
+
+
 async def create_card(name: str, limit: int) -> dict:
     """
     Create a new Float card with a spending limit.

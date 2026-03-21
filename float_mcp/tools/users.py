@@ -32,6 +32,24 @@ async def list_users() -> dict:
     return {"users": users}
 
 
+async def get_user_by_id(user_id: str) -> dict:
+    """
+    Retrieve a single user by ID.
+
+    Args:
+        user_id: User ID
+
+    Returns:
+        {"user": {...}} or {"error": "..."}
+    """
+    resp = await float_client.get(f"/users/{user_id}")
+
+    if "error" in resp:
+        return resp
+
+    return {"user": _normalize_user(resp)}
+
+
 async def assign_card_to_user(card_id: str, user_id: str) -> dict:
     """
     Assign a card to a user.
