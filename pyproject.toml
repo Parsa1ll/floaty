@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "floaty"
+version = "0.1.0"
+description = "MCP server for Float Financial API"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx",
+    "python-dotenv",
+    "mcp[cli]",
+    "watchfiles",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["float_mcp*"]
