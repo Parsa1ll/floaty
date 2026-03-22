@@ -5,7 +5,7 @@ from float_mcp.utils.float_client import float_client
 
 def _normalize_bill(raw: dict) -> dict:
     """Map Float API bill response to clean schema."""
-    return {
+    out = {
         "id": raw.get("id"),
         "amount": (raw.get("amount", {}).get("value", 0) or 0) / 100,
         "currency": raw.get("amount", {}).get("currency", "CAD"),
@@ -15,6 +15,9 @@ def _normalize_bill(raw: dict) -> dict:
         "memo": raw.get("memo", ""),
         "synced": raw.get("synced", False),
     }
+    if raw.get("due_date"):
+        out["due_date"] = raw["due_date"]
+    return out
 
 
 def _normalize_bill_attachment(raw: dict) -> dict:
