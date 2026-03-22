@@ -79,7 +79,7 @@ float_mcp/
 
 ```bash
 # Clone and enter directory
-git clone <repo>
+git clone https://github.com/Parsa1ll/floaty
 cd floaty
 
 # Create virtual environment
