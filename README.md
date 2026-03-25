@@ -8,7 +8,7 @@
 ## 🎬 Demo
 <div align="center">
   <a href="https://www.youtube.com/watch?v=FxuzlSiENwI">
-    <img src="https://img .youtube.com/vi/FxuzlSiENwI/maxresdefault.jpg" alt="Floaty Demo Video" width="800"/>
+    <img src="https://img.youtube.com/vi/FxuzlSiENwI/maxresdefault.jpg" alt="Floaty Demo Video" width="800"/>
   </a>
   <br/>
   <strong>Click the image above to watch the demo on YouTube</strong>
