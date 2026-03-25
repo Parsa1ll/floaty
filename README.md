@@ -7,7 +7,7 @@
 ---
 ## 🎬 Demo
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=Msyh6SsYRC4">
+  <a href="https://www.youtube.com/watch?v=FxuzlSiENwI">
     <img src="https://www.youtube.com/watch?v=FxuzlSiENwI/maxresdefault.jpg" alt="Floaty Demo Video" width="800"/>
   </a>
   <br/>
