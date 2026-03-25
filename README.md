@@ -5,6 +5,14 @@
 > A production-ready, fully-featured MCP server that exposes Float's complete API surface with AI-powered finance intelligence, fraud detection, and anomaly analysis.
 
 ---
+## 🎬 Demo
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Msyh6SsYRC4">
+    <img src="https://www.youtube.com/watch?v=FxuzlSiENwI/maxresdefault.jpg" alt="Floaty Demo Video" width="800"/>
+  </a>
+  <br/>
+  <strong>Click the image above to watch the demo on YouTube</strong>
+</div>
 
 ## 🎯 Overview
 
